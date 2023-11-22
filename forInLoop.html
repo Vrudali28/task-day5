@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var TODORequest = new XMLHttpRequest();
+TODORequest.open("GET", "https://restcountries.com/v3.1/all");
+TODORequest.addEventListener('load', function (){
+  //console.log(this.response)
+  iterate(JSON.parse(this.response))
+});
+
+TODORequest.send()
+console.log(TODORequest)
+
+function iterate(data = []) {
+  for (let x in data) {
+    console.log(data[x])
+  }
+}
+    </script>
+    
+</body>
+</html>
